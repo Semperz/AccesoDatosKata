@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigInteger;
 @Entity
-@Table
+@Table (name = "t_orders")
 public class Order {
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "ord_id")

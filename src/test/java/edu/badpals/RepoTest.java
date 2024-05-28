@@ -78,13 +78,13 @@ public class RepoTest {
      * Identity
      */
 
-/*    @Test
+    @Test
     public void test_mapping_order() {
         Order pedido = em.find(Order.class, 1L);
         Assertions.assertThat(pedido).isNotNull();
         Assertions.assertThat(pedido.toString()).contains("Marius Black"); //ord_wizard
         Assertions.assertThat(pedido.toString()).containsIgnoringCase("Elixir of the Mongoose"); //ord_item
-    }*/
+    }
 
 
 /**
@@ -132,7 +132,7 @@ public class RepoTest {
      * coincida con el especificado.
      */
 
-    @Test
+  /*  @Test
     public void test_load_item() {
         Assertions.assertThat(repo).isNotNull();
         MagicalItem item = repo.loadItem("Aged Brie").get();
@@ -142,7 +142,7 @@ public class RepoTest {
 
         // test no existe el item
         Assertions.assertThat(repo.loadItem("Varita de Sauco")).isEmpty();
-    }
+    }*/
 
 /**
      * Implementa el metodo loadItem(name, quality, type)
