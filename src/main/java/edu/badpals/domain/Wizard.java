@@ -14,7 +14,7 @@ public class Wizard {
     @Enumerated(EnumType.STRING)
     private WizardPerson wizardPerson;
 
-    Wizard() {
+    public Wizard() {
     }
 
     public String getWizardName() {
