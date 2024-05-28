@@ -3,6 +3,7 @@ package edu.badpals.domain;
 import jakarta.persistence.*;
 
 import java.math.BigInteger;
+import java.util.Objects;
 
 @Entity
 @Table(name = "t_items")
@@ -57,5 +58,20 @@ public class MagicalItem {
                 .append("Item ID: ")
                 .append(getId());
         return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MagicalItem that = (MagicalItem) o;
+        return itemQuality == that.itemQuality &&
+                Objects.equals(itemName, that.itemName) &&
+                Objects.equals(itemType, that.itemType);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(itemName, itemQuality, itemType);
     }
 }

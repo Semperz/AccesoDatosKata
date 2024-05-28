@@ -153,7 +153,7 @@ public class RepoTest {
      * name, quality y type que el de la peticion
      * y no cualquier otro item de la base de datos
      * que tenga sólo el mismo nombre.
-     *//*
+     */
 
     @Test
     public void test_load_item_equal() {
@@ -168,8 +168,6 @@ public class RepoTest {
         brie = new MagicalItem("Aged Brie", 1000, "MagicalItem");
         Assertions.assertThat(repo.loadItem(brie)).isEmpty();
     }
-
-    */
 /**
      * Implementa el metodo loadItems() del repositorio
      * que devuelve una lista de Items

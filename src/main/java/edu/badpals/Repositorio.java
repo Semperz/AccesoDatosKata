@@ -9,6 +9,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
@@ -25,9 +26,16 @@ public class Repositorio {
         Optional<Wizard> wizard = wizardRepo.findByIdOptional(name);
         return wizard.isPresent() ? wizard : Optional.empty();
     }
-      public Optional<MagicalItem> loadItem(String item) {
+    public Optional<MagicalItem> loadItem(String item) {
         return itemRepo.findByItemName(item);
-
+    }
+    public Optional<MagicalItem> loadItem(MagicalItem item) {
+        List<MagicalItem> allItems = itemRepo.listAll();
+        Optional<MagicalItem> targetItem = allItems
+                .stream()
+                .filter(i-> i.equals(item))
+                .findAny();
+        return targetItem.isPresent() ? targetItem : Optional.empty();
     }
     @Transactional
     public Optional<MagicalItem> createItem(String name, int quality, String type) {
