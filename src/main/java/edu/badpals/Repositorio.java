@@ -23,7 +23,7 @@ public class Repositorio {
 
     public Optional<Wizard> loadWizard(String name) {
         Optional<Wizard> wizard = wizardRepo.findByIdOptional(name);
-        return wizard;
+        return wizard.isPresent() ? wizard : Optional.empty();
     }
       public Optional<MagicalItem> loadItem(String item) {
         return itemRepo.findByItemName(item);

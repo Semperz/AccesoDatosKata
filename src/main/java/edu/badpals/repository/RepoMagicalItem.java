@@ -13,11 +13,10 @@ public class RepoMagicalItem implements PanacheRepositoryBase<MagicalItem, BigIn
 public Optional<MagicalItem> findByItemName(String item) {
         List<MagicalItem> allItems = this.listAll();
         Optional<MagicalItem> objectOptional;
-        objectOptional = Optional.of(allItems
+        objectOptional = allItems
                 .stream()
                 .filter(i -> i.getName().contains(item))
-                .toList()
-                .getFirst());
-        return objectOptional;
+                .findAny();
+        return objectOptional.isPresent() ? objectOptional : Optional.empty();
     }
 }
