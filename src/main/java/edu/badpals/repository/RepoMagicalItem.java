@@ -16,7 +16,7 @@ public Optional<MagicalItem> findByItemName(String item) {
         objectOptional = allItems
                 .stream()
                 .filter(i -> i.getName().contains(item))
-                .findAny();
+                .findFirst();
         return objectOptional.isPresent() ? objectOptional : Optional.empty();
     }
 }

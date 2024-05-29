@@ -10,6 +10,7 @@ import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import java.util.List;
 
 @QuarkusTest
 public class RepoTest {
@@ -174,7 +175,7 @@ public class RepoTest {
      * con el nombre indicado
      *
      * Ojo que el nombre del item no es la clave primaria.
-     *//*
+     */
 
     @Test
     public void test_load_items() {
@@ -189,8 +190,6 @@ public class RepoTest {
         Assertions.assertThat(repo.loadItems("Varita de Sauco")).isEmpty();
     }
 
-
-    */
 /**
      * Implementa el metodo placeOrder(wizard, item) del repositorio
      * que genera un pedido de un item para un mago determinado.

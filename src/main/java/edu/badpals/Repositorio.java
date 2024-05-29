@@ -9,8 +9,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @ApplicationScoped
 public class Repositorio {
@@ -36,6 +36,15 @@ public class Repositorio {
                 .filter(i-> i.equals(item))
                 .findAny();
         return targetItem.isPresent() ? targetItem : Optional.empty();
+    }
+    public List<MagicalItem> loadItems(String itemName){
+        List<MagicalItem> items = new ArrayList<>();
+        for (MagicalItem item : itemRepo.listAll()) {
+            if (item.getName().equals(itemName)) {
+                items.add(item);
+            }
+        }
+        return items;
     }
     @Transactional
     public Optional<MagicalItem> createItem(String name, int quality, String type) {
