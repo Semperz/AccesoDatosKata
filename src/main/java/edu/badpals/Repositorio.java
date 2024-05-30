@@ -64,4 +64,10 @@ public class Repositorio {
         }
         return orden;
     }
+
+    public void createItems(List<MagicalItem> items) {
+        for (MagicalItem item : items){
+            itemRepo.persist(item);
+        }
+    }
 }

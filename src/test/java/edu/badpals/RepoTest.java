@@ -258,7 +258,7 @@ public class RepoTest {
      * coincida con el especificado, sino, tu codigo
      * devolvera uno de los pases a backstage que no
      * es el que buscamos.
-     *//*
+     */
 
 
     @Test
@@ -289,7 +289,6 @@ public class RepoTest {
         Assertions.assertThat(items.get(1)).hasFieldOrPropertyWithValue("quality", -1);
     }
 
-    */
 /**
      * Implementa el metodo deleteItem() del repositorio
      * que elimina el item indicado en la base de datos.
