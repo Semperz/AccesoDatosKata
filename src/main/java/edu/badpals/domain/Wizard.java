@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Wizard {
     @Id
     @Column(name = "wizard_name")
-    private String wizardName="";
+    private String name="";
     @Column(name = "wizard_dexterity")
     private int wizardDexterity=0;
     @Column(name="wizard_person")
@@ -17,8 +17,8 @@ public class Wizard {
     public Wizard() {
     }
 
-    public String getWizardName() {
-        return wizardName;
+    public String getName() {
+        return name;
     }
 
     public int getWizardDexterity() {
@@ -32,7 +32,7 @@ public class Wizard {
     public String toString() {
         StringBuilder sb =new StringBuilder();
         sb.append("Wizard name: ")
-                .append(getWizardName())
+                .append(getName())
                 .append('\n')
                 .append("Wizard dexterity: ")
                 .append(getWizardDexterity())

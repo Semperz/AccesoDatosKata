@@ -8,7 +8,7 @@ public class WizardTest {
     @Test
     public void testGetItem(){
         Wizard wizard = new Wizard();
-        assertEquals("",wizard.getWizardName());
+        assertEquals("",wizard.getName());
 
     }
 }

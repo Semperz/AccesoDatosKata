@@ -1,6 +1,7 @@
 package edu.badpals;
 
 import edu.badpals.domain.MagicalItem;
+import edu.badpals.domain.Order;
 import edu.badpals.domain.Wizard;
 import edu.badpals.repository.RepoMagicalItem;
 import edu.badpals.repository.RepoOrder;
@@ -51,5 +52,16 @@ public class Repositorio {
         Optional<MagicalItem> item = Optional.of(new MagicalItem(name, quality, type));
         itemRepo.persist(item.get());
         return this.loadItem(String.valueOf(item));
+    }
+
+    public Optional<Order> placeOrder(String wizardName, String itemName) {
+        Optional<Order> orden = Optional.empty();
+        Optional<MagicalItem> item = this.loadItem(itemName);
+        Optional<Wizard> wizard = this.loadWizard(wizardName);
+        if (wizard.get().getWizardPerson().toString() != "MUDBLOOD"){
+            orden = Optional.of(new Order(wizard.get(), item.get()));
+            orderRepo.persist(orden.get());
+        }
+        return orden;
     }
 }
