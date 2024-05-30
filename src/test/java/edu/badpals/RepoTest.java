@@ -234,7 +234,7 @@ public class RepoTest {
      * Implementa el metodo createItem() del repositorio
      * que crea un item en la base de datos.
      */
-/*    @Test
+@Test
     @Transactional
     public void test_create_item() {
         Assertions.assertThat(repo).isNotNull();
@@ -246,7 +246,7 @@ public class RepoTest {
         Assertions.assertThat(relic.getName()).isEqualTo("Guardapelo");
         Assertions.assertThat(relic.getQuality()).isEqualTo(100);
         Assertions.assertThat(relic.getType()).isEqualTo("MagicalItem");
-    }*/
+    }
 
 
 /**

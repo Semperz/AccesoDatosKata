@@ -51,7 +51,7 @@ public class Repositorio {
     public Optional<MagicalItem> createItem(String name, int quality, String type) {
         Optional<MagicalItem> item = Optional.of(new MagicalItem(name, quality, type));
         itemRepo.persist(item.get());
-        return this.loadItem(String.valueOf(item));
+        return this.loadItem(item.get());
     }
 
     public Optional<Order> placeOrder(String wizardName, String itemName) {
