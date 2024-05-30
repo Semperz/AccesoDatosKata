@@ -70,4 +70,11 @@ public class Repositorio {
             itemRepo.persist(item);
         }
     }
+
+    public void deleteItem(MagicalItem item) {
+        Optional<MagicalItem> magicalItem = loadItem(item);
+        if (magicalItem.isPresent()){
+            itemRepo.delete(magicalItem.get());
+        }
+    }
 }

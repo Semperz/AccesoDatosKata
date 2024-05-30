@@ -301,7 +301,7 @@ public class RepoTest {
      * name, quality y type que el de la peticion
      * y no cualquier otro item de la base de datos
      * solo con el mismo nombre.
-     *//*
+     */
 
     @Test
     @Transactional
@@ -320,7 +320,6 @@ public class RepoTest {
         Assertions.assertThat(repo.loadItem("Varita de Sauco")).isEmpty();
     }
 
-    */
 /**
      * Implementa un servicio,
      * indica que es un bean
